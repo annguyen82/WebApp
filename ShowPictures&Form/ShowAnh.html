@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>JS</title>
+</head>
+<body>
+		
+	<div>
+		<img id= "d" width="600" height="300" src= "1.jpg">
+	</div>
+	<div>
+		<button id="bt" name="button" value="OK" type="button" onclick="Show()" >Play</button>	
+	</div>
+	<div>
+		<button id="bts" name="button" value="OK" type="button" onclick="Stop()" >Stop</button>	
+	</div>
+			
+	<div >
+		<a href="javascript:;" onclick= "Chuyen1()" ><img width="100" height="100" src="1.jpg" alt=""></a> 
+		<a href="javascript:;" onclick= "Chuyen2()" > <img  width="100" height="100" src="2.jpg" alt=""></a>
+		<a href="javascript:;" onclick= "Chuyen3()" ><img  width="100" height="100" src="3.jpg" alt=""></a> 
+		<a href="javascript:;" onclick= "Chuyen4()" ><img width="100" height="100"  src="4.jpg" alt=""></a> 
+		<a href="javascript:;" onclick= "Chuyen5()" ><img  width="100" height="100" src="5.jpg" alt=""></a> 
+		<a href="javascript:;" onclick= "Chuyen6()" ><img  width="100" height="100" src="6.jpg" alt=""></a> 
+		<a href="javascript:;" onclick= "Chuyen7()" ><img  width="100" height="100" src="7.jpg" alt=""></a> 
+
+	</div>
+	<script type="text/javascript">
+		var images = [];
+   		images[0] = '1.jpg';
+   		images[1] = '2.jpg';
+   		images[2] = '3.jpg';
+   		images[3] = '4.jpg';
+   		images[4] = '5.jpg';
+   		images[5] = '6.jpg';
+   		images[6] = '7.jpg';
+    function Chuyen1(){
+   		document.getElementById('d').src= images[0];
+   	}
+   	function Chuyen2(){
+   		document.getElementById('d').src=images[1];
+   	}
+   	function Chuyen3(){
+   		document.getElementById('d').src=images[2];
+   	}
+   	function Chuyen4(){
+   		document.getElementById('d').src=images[3];
+   	}
+   	function Chuyen5(){
+   		document.getElementById('d').src=images[4];
+   	}
+   	function Chuyen6(){
+   		document.getElementById('d').src=images[5];
+   	}
+   	function Chuyen7(){
+   		document.getElementById('d').src=images[6];
+   	}
+   	</script>
+   	<script type="text/javascript">
+   		var i = 0;
+   		var interval = null;
+   		var images = [];
+   		var time;
+   		images[0] = '1.jpg';
+   		images[1] = '2.jpg';
+   		images[2] = '3.jpg';
+   		images[3] = '4.jpg';
+   		images[4] = '5.jpg';
+   		images[5] = '6.jpg';
+   		images[6] = '7.jpg';
+   	function Show(){
+   		document.getElementById('d').src = images[i];
+   		if(i <6){
+   			i++;
+   		}else{
+   			i = 0;
+   		}
+   		time = setTimeout(Show, 1000);
+   	}
+   	var Stop = function () {
+      clearInterval(time);
+    }
+
+  //  	function Stop() {
+  //   	clearInterval(interval);
+  //   	document.getElementById('d').src= images[0];
+		// }
+   window.onload = onloadHandler;
+  </script>
+	<!-- <script>
+		var keepLooping = false;
+
+while(!keepLooping){
+    document.getElementById("bt").onclick = function(){
+    	Show();
+        keepLooping = true;
+    }
+}
+while(keepLooping){
+    //do something here
+    document.getElementById("bt").onclick = function(){
+    	Stop();
+        keepLooping = false;
+    }
+}
+	</script> -->
+</body>
+</html>

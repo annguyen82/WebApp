@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+</head>
+<body>
+	
+	<form action="" method="POST" role="form" name="formDK"
+	 style="width: 350px; margin: 0 auto; display: block; border: 1px solid red; padding: 8px; border-radius: 2px;">
+		<legend>Form</legend>
+	
+		<div class="form-group">
+			<label for="">MSSV</label>
+			<input name="mssv" type="text" class="form-control" id="" placeholder="Input field">
+		</div>
+		<div class="form-group">
+			<label for="">Họ Tên</label>
+			<input name="hoten" type="text" class="form-control" id="" placeholder="Input field">
+		</div>
+		<div class="form-group">
+			<label for="">Tuổi</label>
+			<input name="tuoi" type="text" class="form-control" id="" placeholder="Input field">
+		</div>
+		<div class="form-group">
+			<label for="">Giới tính</label>
+			<input name="gioitinh" type="text" class="form-control" id="" placeholder="Input field">
+		</div>
+	
+		
+	
+		<button type="button" class="btn btn-primary" onclick="Nhap()">Nhập</button>
+	</form>
+	
+	<table class="table table-hover">
+		<thead>
+				<tr> <th>#</th> <th>MSSV</th> <th>Họ Tên</th> <th>Tuổi</th> <th>Giới tính</th> </tr>
+			
+		</thead>
+		<tbody id="tablebody">
+		
+		</tbody>
+	</table>
+	<script>
+		var index = 0;
+		function createRow(index, mssv,ten, tuoi, gioitinh) {
+            var tr = document.createElement('tr');
+            var th = document.createElement('th');
+            var tdmssv = document.createElement('td');
+            var tdten = document.createElement('td');
+            var tdtuoi = document.createElement('td');
+            var tdgioitinh = document.createElement('td');
+            th.scope = 'row';
+            th.innerHTML = index;
+            tdmssv.innerHTML = mssv;
+            tdten.innerHTML = ten;
+            tdtuoi.innerHTML = tuoi;
+            tdgioitinh.innerHTML = gioitinh;
+            tr.appendChild(th);
+            tr.appendChild(tdmssv);
+            tr.appendChild(tdten);
+            tr.appendChild(tdtuoi);
+            tr.appendChild(tdgioitinh);
+       
+            return tr;
+        }
+		
+	function Nhap() {
+
+            var row = createRow(++index, formDK.mssv.value, formDK.hoten.value, formDK.tuoi.value, formDK.gioitinh.value
+           );
+            document.getElementById('tablebody').appendChild(row);
+            console.log(row);
+        }
+	</script>
+	
+	<script src="/popper.min.js"></script>
+	<script src="/jquery-3.3.1.min.js"></script>
+	<script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
